@@ -17,3 +17,10 @@ export const getArticle = (article_id) => {
     });
 };
 
+export const getComments = (article_id) => {
+    return newsAPi.get(`/articles/${article_id}/comments`)
+    .then((res) => {
+        return res.data.comments;
+    })
+}
+

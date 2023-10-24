@@ -8,7 +8,7 @@ export default function ArticleCard({ article }) {
         <img className='article_img'src={article.article_img_url} alt="" />
         <p>Author: {article.author}</p>
         <p>Votes: {article.votes}</p>
-        <p>id: {article.article_id}</p>
+        <p>Comments: {article.comment_count}</p>
     </div>
   )
 }

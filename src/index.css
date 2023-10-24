@@ -24,6 +24,9 @@ ul {
 }
 .footer {
   background-color: #dfc3d1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 .article_card {
@@ -59,5 +62,7 @@ h3 {
   margin: 10px;
 }
 
-
+.single-article img {
+  width: 100%;
+}
 

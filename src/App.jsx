@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Header from './Components/Header'
 import ArticleList from './Components/ArticleList'
 import Footer from './Components/footer'
+import { Route, Routes } from  'react-router-dom'
+import SingleArticle from './Components/SingleArticle'
 
 
 function App() {
@@ -9,8 +11,10 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <ArticleList />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<ArticleList />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
+      </Routes>
     </div>
   )
 }

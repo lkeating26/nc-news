@@ -4,7 +4,7 @@ import Login from './Login'
 
 export default function Header() {
   return (
-        <div className='header'>
+        <header className='header'>
             <div>
                 <h1>NC News</h1> 
             </div>
@@ -12,6 +12,6 @@ export default function Header() {
               <NavBar />
               <Login />
             </div>
-        </div>
+        </header>
   )
 }

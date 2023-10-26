@@ -4,6 +4,7 @@ import { getArticle, getComments} from '../utils/api'
 import  Loader from './Loader';
 import Error from './Error';
 import CommentsList from './CommentsList';
+import Voter from './Voter';
 
 export default function SingleArticle() {
 
@@ -37,13 +38,15 @@ export default function SingleArticle() {
         { error && <Error error= { error } />}
         <img src={article.article_img_url} alt="" />
         <div className='single-article-text'>
+          <h2 id='single-title'>{article.title}</h2>
           <h3>{article.topic}</h3>
-          <h2>{article.title}</h2>
-          <p>Votes: {article.votes}</p>
           <p>Author: {article.author}</p>
-          <p>{article.created_at}</p>
+          <p>{new Date (article.created_at).toLocaleString()}</p>
           <p id="single-article-body">{article.body}</p>
-        </div>  
+        </div>
+        <div className='article-voter'>
+          <Voter votes={article.votes} article_id={article_id} />
+        </div> 
       </article>
       <section className='comments'>
         <h3>Comments</h3>

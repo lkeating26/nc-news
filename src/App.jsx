@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Header from './Components/Header'
 import ArticleList from './Components/ArticleList'
-import Footer from './Components/footer'
 import { Route, Routes } from  'react-router-dom'
 import SingleArticle from './Components/SingleArticle'
 

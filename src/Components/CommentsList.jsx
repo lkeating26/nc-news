@@ -1,7 +1,3 @@
-import { useEffect, useState } from 'react'
-import { getComments } from '../utils/api';
-import Error from './Error';
-
 
 export default function CommentsList({ comments }) {
 

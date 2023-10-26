@@ -24,3 +24,9 @@ export const getComments = (article_id) => {
     })
 }
 
+export const updateVote = (article_id, vote) => {
+    return newsAPi.patch(`/articles/${article_id}`, {inc_votes: vote})
+    .then((res) => {
+        return res.data.article;
+    })
+}

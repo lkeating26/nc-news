@@ -11,7 +11,7 @@ export default function CommentsList({ comments }) {
               <p>{comment.body}</p>
               <p>{comment.author}</p>
               <p>votes: {comment.votes}</p>
-              <p>{comment.created_at}</p>
+              <p>{new Date (comment.created_at).toLocaleString()}</p>
             </li>
           )
         })}

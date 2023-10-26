@@ -30,3 +30,9 @@ export const updateVote = (article_id, vote) => {
         return res.data.article;
     })
 }
+
+export const getUsers = () => {
+    return newsAPi.get(`/users`).then((res) => {
+        return res.data.users;
+    })
+}

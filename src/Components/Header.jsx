@@ -1,17 +1,16 @@
 import React from 'react'
 import NavBar from './NavBar'
-import Login from './Login'
+import { UserContext } from '../contexts/User'
+import { useContext } from 'react'
 
 export default function Header() {
+
+  const { user } = useContext(UserContext)
+
   return (
         <header className='header'>
-            <div>
-                <h1>NC News</h1> 
-            </div>
-            <div className='nav-btns'>
-              <NavBar />
-              <Login />
-            </div>
+                <h1>Welcome to NC News</h1>
+                <p>Username: {user.username}</p>
         </header>
   )
 }

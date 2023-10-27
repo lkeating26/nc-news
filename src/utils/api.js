@@ -30,3 +30,16 @@ export const updateVote = (article_id, vote) => {
         return res.data.article;
     })
 }
+
+export const getUsers = () => {
+    return newsAPi.get(`/users`).then((res) => {
+        return res.data.users;
+    })
+}
+
+export const updateComments = (article_id, username, body) => {
+    return newsAPi.post(`/articles/${article_id}/comments`, {username , body})
+    .then((res) => {
+        return res.data.comment;
+    })
+}

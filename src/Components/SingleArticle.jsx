@@ -1,12 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { getArticle, getComments} from '../utils/api'
 import  Loader from './Loader';
 import Error from './Error';
 import CommentsList from './CommentsList';
+import CommentAdder from './CommentAdder';
 import Voter from './Voter';
+import { UserContext } from '../contexts/User'
 
 export default function SingleArticle() {
+
+  const { user } = useContext(UserContext); 
 
   const { article_id } = useParams()
 
@@ -14,6 +18,8 @@ export default function SingleArticle() {
   const [error, setError] = useState(null);
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
+  const [commentAdded, setCommentAdded] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     getArticle(article_id).then((gotArticle) => {
@@ -29,7 +35,7 @@ export default function SingleArticle() {
       setError(err.response.data.msg)
       setIsLoading(false)
   })
-},[])
+},[commentAdded])
 
   return (
     <>
@@ -50,7 +56,12 @@ export default function SingleArticle() {
       </article>
       <section className='comments'>
         <h3>Comments</h3>
-        <CommentsList comments={comments} />
+        <div>
+          {user && <CommentAdder article_id={article_id} setCommentAdded={setCommentAdded} />}
+        </div>
+        <div>
+          <CommentsList comments={comments} />
+        </div>
       </section>
     </>
   )

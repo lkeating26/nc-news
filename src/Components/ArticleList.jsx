@@ -4,6 +4,7 @@ import ArticleCard from './ArticleCard';
 import { Link } from 'react-router-dom';
 import  Loader from './Loader';
 import Error from './Error';
+import NavBar from './NavBar';
 
 export default function ArticleList() {
 

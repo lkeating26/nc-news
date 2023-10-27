@@ -11,7 +11,7 @@ export default function Welcome() {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState(null);
     const [inputUser, setInputUser] = useState('');
-    const [invalidUser, setInvalidUser] = useState(false)
+    const [isInvalidUser, setIsInvalidUser] = useState(false)
 
     const navigate = useNavigate()
 
@@ -30,12 +30,12 @@ export default function Welcome() {
             return u.username === inputUser;
         })
         if(validUser) {
-            setInvalidUser(false)
+            setIsInvalidUser(false)
             setUser(validUser)
             navigate('/articles')
         }
         else {
-            setInvalidUser(true)
+            setIsInvalidUser(true)
             setInputUser('')
         }
    }
@@ -52,7 +52,7 @@ export default function Welcome() {
                 />
             </label>
             <button>Login</button>
-            { invalidUser && <p>Sorry, username not found</p>}
+            { isInvalidUser && <p>Sorry, username not found</p>}
         </form>
     </section>
   )

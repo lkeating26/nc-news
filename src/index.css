@@ -17,13 +17,15 @@ ul {
 }
 
 .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #9dafab ;
 }
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
-
+  justify-content: space-around;
 }
 .footer {
   background-color: #dfc3d1;
@@ -116,4 +118,14 @@ h3 {
 
  #single-title {
   padding: 0;
+ }
+
+ .comment-adder {
+  display: flex;
+  padding-bottom: 5px;
+  border-bottom: dotted #9dafab 1px;
+ }
+
+ #add-comment {
+  width: 100%;
  }
